@@ -33,6 +33,27 @@ Tweets = Base.classes.Tweets
 app = Flask(__name__)
 CORS(app, support_credentials=True)   # to prevent CORS errors
 
+##################### Map Data
+# Connect the database
+data_path = "data/central.geojson"
+with open(data_path) as f:
+    data_central = json.load(f)
+
+data_path = "data/eastern.geojson"
+with open(data_path) as f:
+    data_eastern = json.load(f)
+
+data_path = "data/mountain.geojson"
+with open(data_path) as f:
+    data_mountain = json.load(f)
+
+data_path = "data/pacific.geojson"
+with open(data_path) as f:
+    data_pacific = json.load(f)
+
+app = Flask(__name__)
+CORS(app, support_credentials=True)   # to prevent CORS errors
+
 
 #################################################
 # Flask Routes
@@ -44,6 +65,10 @@ def welcome():
     return (
         f"Available Routes:<br/>"
         f"/api/v1.0/main<br/>"
+        f"/api/v1.0/central<br/>"
+        f"/api/v1.0/eastern<br/>"
+        f"/api/v1.0/mountain<br/>"
+        f"/api/v1.0/pacific<br/>"
     )
 
 @app.route("/api/v1.0/main")
@@ -75,7 +100,26 @@ def test():
 
     return jsonify(result_list)
 
-    
+
+@app.route("/api/v1.0/central")
+@cross_origin(supports_credentials=True)  # to prevent CORS errors
+def central_data():
+    return jsonify(data_central)
+
+@app.route("/api/v1.0/eastern")
+@cross_origin(supports_credentials=True)  # to prevent CORS errors
+def eastern_data():
+    return jsonify(data_eastern)
+
+@app.route("/api/v1.0/mountain")
+@cross_origin(supports_credentials=True)  # to prevent CORS errors
+def mountain_data():
+    return jsonify(data_mountain)
+
+@app.route("/api/v1.0/pacific")
+@cross_origin(supports_credentials=True)  # to prevent CORS errors
+def pacific_data():
+    return jsonify(data_pacific)
     
 
 if __name__ == '__main__':

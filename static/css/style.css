@@ -1,0 +1,14 @@
+body {
+  padding: 0;
+  margin: 10;
+}
+
+#map,
+body,
+html {
+  height: 400px;
+  width: 700px;
+  position: relative;
+  top: 5px;
+  right: -260px;
+}
