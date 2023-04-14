@@ -1,9 +1,11 @@
 
 // Perform the call to data to get the time zone information. Call createMarkers when it completes.
-d3.json("http://127.0.0.1:5000/api/v1.0/central").then(function(centralData) {
-  d3.json("http://127.0.0.1:5000/api/v1.0/eastern").then(function(easternData) {
-    d3.json("http://127.0.0.1:5000/api/v1.0/mountain").then(function(mountainData) {
-      d3.json("http://127.0.0.1:5000/api/v1.0/pacific").then(function(pacificData) {
+
+d3.json("http://127.0.0.1:5000/api/v1.0/main").then(function(mainData) {
+  d3.json("http://127.0.0.1:5000/api/v1.0/central").then(function(centralData) {
+    d3.json("http://127.0.0.1:5000/api/v1.0/eastern").then(function(easternData) {
+      d3.json("http://127.0.0.1:5000/api/v1.0/mountain").then(function(mountainData) {
+        d3.json("http://127.0.0.1:5000/api/v1.0/pacific").then(function(pacificData) {
 
  let centralPolygonData = centralData.features[0].geometry.coordinates[0];
  let easternPolygonData = easternData.features[0].geometry.coordinates[0];
@@ -66,6 +68,7 @@ L.polygon(pacificPolygonDataNew, {
 }).bindPopup("Pacific").addTo(myMap);
 
 
+});
 });
 });
 });
