@@ -1,0 +1,27 @@
+body {
+  padding: 0;
+  margin: 0;
+  position: 1;
+  
+  
+}
+
+#container,
+body,
+html {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: 5px;
+  right: -260px;
+}
+
+#map,
+body,
+html {
+  height: 400px;
+  width: 700px;
+  position: relative;
+  top: 5px;
+  right: -260px;
+}
