@@ -8,13 +8,12 @@
 }
 
 
-img {
+.image {
   width: 400px;
   height: 220px;
   border-radius: 30px;
   margin-left: 545px;
   margin-top: -60px;
-  /* vertical-align: top; */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -24,26 +23,27 @@ img {
   font-size: 30px;
   font-style: italic;
   text-align: right;
-  padding-right: 10px;
+  padding-right: 20px;
   background-color: brown;
   color: white;
-  margin-left: 300px;
-  margin-right: 50px;
+  margin-left: 550px;
+  margin-right: 20px;
   margin-top: 50px;
   border-radius: 30px;
   margin-bottom: 0px;
 }
 
 .text {
-  /* display: inline-block; */
   font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 3px;
-  margin-right: 2px;
+  margin-right: 0px;
   margin-left: 1000px;
   padding-top: 3px;
   padding-right: 0px;
   line-height: 20px;
   width: 400px;
+  text-align: right;
 }
 
 .contributors {
@@ -64,7 +64,7 @@ img {
 }
 
 #bar {
-  /* display: inline-block; */
+  
   margin-top: -270px;
   margin-left: 950px;
   width: 500px;
@@ -72,12 +72,12 @@ img {
 }
 
 #pie {
-  /* display: inline-block; */
+  
   height: 100px;
   width: 100px;
   margin-top: -50px;
   margin-left: 20px;
-  /* padding-top: -100px; */
+  
 }
 
 #apex {
@@ -99,5 +99,3 @@ img {
 #map:hover {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
-
-
