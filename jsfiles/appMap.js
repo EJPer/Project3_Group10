@@ -26,11 +26,11 @@ for (let i = 0; i < pacificPolygonData.length; i++) {pacificPolygonDataNew.push(
   .filter((value, index, self) => self.indexOf(value) === index)
     console.log(airlinesArray);
 
-  let myMap = L.map("map").setView([38, -96], 4);
+  let myMap = L.map("map").setView([38, -96], 3.4);
   
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(myMap);
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(myMap); 
 
 function init(){
   let selector = d3.select("#selDataset");
@@ -85,29 +85,29 @@ L.polygon(centralPolygonDataNew, {
   color: "yellow",
   fillColor: "yellow",
   fillOpacity: 0.50
-}).bindPopup(`<h1>Central Time Zone</h1> <hr> <h2>Pozitive Reviews: ${centralPositiveReview}</h2> 
-<h2>Negative Reviews: ${centralNegativeReview}</h2><h2>Neutral Reviews: ${centralNeutralReview}</h2>`).addTo(myMap);
+}).bindPopup(`<h3>Central Time Zone ${centralPositiveReview + centralNegativeReview + centralNeutralReview}</h3> <hr><h4>Pozitive Reviews: ${centralPositiveReview}</h4> 
+<h4>Negative Reviews: ${centralNegativeReview}</h4><h4>Neutral Reviews: ${centralNeutralReview}</h4>`).addTo(myMap);
 
 L.polygon(easternPolygonDataNew, {
   color: "green",
   fillColor: "green",
   fillOpacity: 0.50
-}).bindPopup(`<h1>Eastern Time Zone</h1> <hr> <h2>Pozitive Reviews: ${easternPositiveReview}</h2> 
-<h2>Negative Reviews: ${easternNegativeReview}</h2><h2>Neutral Reviews: ${easternNeutralReview}</h2>`).addTo(myMap);
+}).bindPopup(`<h3>Eastern Time Zone ${easternPositiveReview + easternNegativeReview + easternNeutralReview}</h3> <hr> <h4>Pozitive Reviews: ${easternPositiveReview}</h4> 
+<h4>Negative Reviews: ${easternNegativeReview}</h4><h4>Neutral Reviews: ${easternNeutralReview}</h4>`).addTo(myMap);
 
 L.polygon(mountainPolygonDataNew, {
   color: "orange",
   fillColor: "orange",
   fillOpacity: 0.50
-}).bindPopup(`<h1>Mountain Time Zone</h1> <hr> <h2>Pozitive Reviews: ${mountainPositiveReview}</h2> 
-<h2>Negative Reviews: ${mountainNegativeReview}</h2><h2>Neutral Reviews: ${mountainNeutralReview}</h2>`).addTo(myMap);
+}).bindPopup(`<h3>Mountain Time Zone ${mountainPositiveReview + mountainNegativeReview + mountainNeutralReview}</h3> <hr> <h4>Pozitive Reviews: ${mountainPositiveReview}</h4> 
+<h4>Negative Reviews: ${mountainNegativeReview}</h4><h4>Neutral Reviews: ${mountainNeutralReview}</h4>`).addTo(myMap);
 
 L.polygon(pacificPolygonDataNew, {
   color: "red",
   fillColor: "red",
   fillOpacity: 0.50
-}).bindPopup(`<h1>Pacific Time Zone</h1> <hr> <h2>Pozitive Reviews: ${pacificPositiveReview}</h2> 
-<h2>Negative Reviews: ${pacificNegativeReview}</h2><h2>Neutral Reviews: ${pacificNeutralReview}</h2>`).addTo(myMap);
+}).bindPopup(`<h3>Pacific Time Zone ${pacificPositiveReview + pacificNegativeReview + pacificNeutralReview}</h3> <hr> <h4>Pozitive Reviews: ${pacificPositiveReview}</h4> 
+<h4>Negative Reviews: ${pacificNegativeReview}</h4><h4>Neutral Reviews: ${pacificNeutralReview}</h4>`).addTo(myMap);
 
   
 
@@ -166,31 +166,27 @@ airlineData.forEach(obj =>{
 //Create a yellow polygon for central time zone
 L.polygon(centralPolygonDataNew, {
   color: "yellow",
-  fillColor: "yellow",
-  fillOpacity: 0.50
-}).bindPopup(`<h1>Central Time Zone</h1> <hr> <h2>Pozitive Reviews: ${centralPositiveReview}</h2> 
-<h2>Negative Reviews: ${centralNegativeReview}</h2><h2>Neutral Reviews: ${centralNeutralReview}</h2>`).addTo(myMap);
+  fillOpacity: 0
+}).bindPopup(`<h3>Central Time Zone ${centralPositiveReview + centralNegativeReview + centralNeutralReview}</h3> <hr> <h4>Pozitive Reviews: ${centralPositiveReview}</h4> 
+<h4>Negative Reviews: ${centralNegativeReview}</h4><h4>Neutral Reviews: ${centralNeutralReview}</h4>`).addTo(myMap);
 
 L.polygon(easternPolygonDataNew, {
   color: "green",
-  fillColor: "green",
-  fillOpacity: 0.50
-}).bindPopup(`<h1>Eastern Time Zone</h1> <hr> <h2>Pozitive Reviews: ${easternPositiveReview}</h2> 
-<h2>Negative Reviews: ${easternNegativeReview}</h2><h2>Neutral Reviews: ${easternNeutralReview}</h2>`).addTo(myMap);
+  fillOpacity: 0
+}).bindPopup(`<h3>Eastern Time Zone ${easternPositiveReview + easternNegativeReview + easternNeutralReview}</h3> <hr> <h4>Pozitive Reviews: ${easternPositiveReview}</h4> 
+<h4>Negative Reviews: ${easternNegativeReview}</h4><h4>Neutral Reviews: ${easternNeutralReview}</h4>`).addTo(myMap);
 
 L.polygon(mountainPolygonDataNew, {
   color: "orange",
-  fillColor: "orange",
-  fillOpacity: 0.50
-}).bindPopup(`<h1>Mountain Time Zone</h1> <hr> <h2>Pozitive Reviews: ${mountainPositiveReview}</h2> 
-<h2>Negative Reviews: ${mountainNegativeReview}</h2><h2>Neutral Reviews: ${mountainNeutralReview}</h2>`).addTo(myMap);
+  fillOpacity: 0
+}).bindPopup(`<h3>Mountain Time Zone ${mountainPositiveReview + mountainNegativeReview + mountainNeutralReview}</h3> <hr> <h4>Pozitive Reviews: ${mountainPositiveReview}</h4> 
+<h4>Negative Reviews: ${mountainNegativeReview}</h4><h4>Neutral Reviews: ${mountainNeutralReview}</h4>`).addTo(myMap);
 
 L.polygon(pacificPolygonDataNew, {
   color: "red",
-  fillColor: "red",
-  fillOpacity: 0.50
-}).bindPopup(`<h1>Pacific Time Zone</h1> <hr> <h2>Pozitive Reviews: ${pacificPositiveReview}</h2> 
-<h2>Negative Reviews: ${pacificNegativeReview}</h2><h2>Neutral Reviews: ${pacificNeutralReview}</h2>`).addTo(myMap);
+  fillOpacity: 0
+}).bindPopup(`<h3>Pacific Time Zone ${pacificPositiveReview + pacificNegativeReview + pacificNeutralReview}</h3> <hr> <h4>Pozitive Reviews: ${pacificPositiveReview}</h4> 
+<h4>Negative Reviews: ${pacificNegativeReview}</h4><h4>Neutral Reviews: ${pacificNeutralReview}</h4>`).addTo(myMap);
 
   
 };
@@ -198,7 +194,7 @@ L.polygon(pacificPolygonDataNew, {
 
 init();
  // Call functions to update the charts and displayed data
- d3.selectAll("#selDataset").on("change", function(){updateMap(); updatepie();});
+ d3.selectAll("#selDataset").on("change", function(){updateMap(); updatepie()});
 
 
 

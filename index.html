@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Project 3</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400;1,500&display=swap" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -28,58 +31,51 @@
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="jsfiles/style.css">
 
-  
+  <!-- D3 JavaScript -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- JavaScript files -->
+  <script type="text/javascript" src="jsfiles/appMap.js"></script>
+  <script type="text/javascript" src="jsfiles/appApexScatter.js"></script>  
+  <script type="text/javascript" src="jsfiles/barChart.js"></script>
+  <script type="text/javascript" src="jsfiles/app_pie_chart.js"></script>
 
 </head>
 
 <body>
   <!-- The div where we'll insert our map -->
   
-    
-  
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 jumbotron text-center">
-          <h1>Project 3 - Dashboard</h1>
-          <p>Use the interactive charts below to explore the dataset</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">
-          <div class="well">
-            <h5>Airline:</h5>
-            <select id="selDataset"></select>
-        </div>
-        <div class="col-md-5">
-          <div id="pie"></div>
-        </div>
-        <div class="col-md-5">
-          <div id="chart"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div id="apex"></div>
-      <div class="row">
-        <div class="col-md-12">
-           <div id="map"></div>
-      <div class="row">
-        <div class="col-md-12">
-          <div id="bar"></div>    
 
-        </div>
+      <!-- <div class="pie"> -->
+        <div id="pie"></div>
+      <!-- </div> -->
+      
+      <img class="image" src="data/airplane.jpg">
+
+      <div class="map">
+        <div id="map"></div>
       </div>
-    </div>
-  
+
+      <p class="contributors">https://cartographyvectors.com/ contributors</p>
+
+      <div class="well">Airline:
+        <select id="selDataset"></select>
+      </div>
+     
+      
+      <p class="header">Airplane Tweets</p>
+
+      <p class="text">Explore the pie chart and the map data update with drop down airline option</p>
+            
+      <div id="apex"></div>
+
+      <div class="bar">
+        <div id="bar"></div>
+      </div>
+      
+      <!-- <p class="team"><strong>Project 3 team:</strong> Eduardo Peris Eugenia Volscaia Jessica Warner Tymber Hamilton</p> -->
+    </div>  
     
-
-  <!-- D3 JavaScript -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <!-- JavaScript file -->
-  <script type="text/javascript" src="jsfiles/appMap.js"></script>
-  <script type="text/javascript" src="jsfiles/appApexScatter.js"></script>  
-  <script type="text/javascript" src="jsfiles/barChart.js"></script>
-  <script type="text/javascript" src="jsfiles/app_pie_chart.js"></script>
 
 
 </body>

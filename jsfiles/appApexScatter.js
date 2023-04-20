@@ -43,7 +43,7 @@ function formatForApex(jsondata){
   neutralarray = []
 
   //loop and push to array
-  for (var i = 0 ; i<jsondata.length; i++) {
+  for (var i = 0 ; i<jsondata.length/5; i++) {
     processdata(jsondata[i],postivearray, negativearray, neutralarray)
     
   };
@@ -76,13 +76,22 @@ d3.json(url2).then(result => {
     xaxis:{
       type: 'datetime',
       datetimeFormat: 'HH:mm:ss',
+      title: {
+        text: 'Time of Day',
+        style: {
+          fontSize:'14px'
+        }
+      },
       tick: {
         interval: 60*60*1000,
         format:'HH:mm:ss'
       }
     },
     yaxis:{
-      tickAmount:7
+      tickAmount:7,
+      title:{
+        text:'Length of Tweet'
+      }
     }
   };
   
