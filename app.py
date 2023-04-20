@@ -1,6 +1,5 @@
 import json 
 from flask_cors import CORS, cross_origin
-import numpy as np
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -45,7 +44,6 @@ def welcome():
         f"Available Routes:<br/>"
         f"/api/v1.0/main<br/>"
     )
-
 @app.route("/api/v1.0/main")
 @cross_origin(supports_credentials=True)  # to prevent CORS errors
 def test():
@@ -56,7 +54,7 @@ def test():
               Tweets.airline_sentiment_confidence,
               Tweets.airline,
               Tweets.text,
-              cast(func.substring(cast(Tweets.tweet_created,String), 12,8), String),
+              cast(func.substr(cast(Tweets.tweet_created,String), 12,8), String),
               Tweets.user_timezone).filter(Tweets.airline_sentiment_confidence >= .7,or_(Tweets.user_timezone == 'Pacific Time (US & Canada)',Tweets.user_timezone == 'Eastern Time (US & Canada)',Tweets.user_timezone == 'Mountain Time (US & Canada)',Tweets.user_timezone == 'Central Time (US & Canada)')).all()
 
     
