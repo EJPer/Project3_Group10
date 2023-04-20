@@ -10,7 +10,7 @@ let uniqueAirline = data.map(item => item.airline)
 
 
 (function init() {
-    let dropdown = d3.select('#selData');
+    let dropdown = d3.select('#selDataset');
 
     d3.json(url).then((data)=>{
 
@@ -18,22 +18,23 @@ let uniqueAirline = data.map(item => item.airline)
           .filter((item, i, ar) => ar.indexOf(item) === i)
         
 
-        uniqueAirline.forEach((name) => {
-            dropdown.append("option")
-            .text(name)
-            .property("value", name)
-        })
+        // uniqueAirline.forEach((name) => {
+        //     dropdown.append("option")
+        //     .text(name)
+        //     .property("value", name)
+        // })
 
     starter = "Delta"
 
     createPie(starter)
+    
     });
 })();
 
 
 function createPie(airline) {
     d3.json(url).then((data) => {
-
+        
         let airlineData = data
         let airlineValues = airlineData.filter(object => object.airline == airline);
         console.log(airlineValues)
@@ -71,7 +72,12 @@ function createPie(airline) {
     });
 };
 
-function optionChanged(airline) {
+
+
+
+function updatepie() {
+    let selector2 = d3.select("#selDataset");
+    let airline = selector2.property("value");
     console.log(airline);
     createPie(airline);
 };

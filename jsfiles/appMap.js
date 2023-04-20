@@ -198,7 +198,7 @@ L.polygon(pacificPolygonDataNew, {
 
 init();
  // Call functions to update the charts and displayed data
- d3.selectAll("#selDataset").on("change", function(){updateMap()});
+ d3.selectAll("#selDataset").on("change", function(){updateMap(); updatepie();});
 
 
 

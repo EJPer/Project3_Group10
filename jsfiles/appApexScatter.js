@@ -1,7 +1,7 @@
 //Loading in Data//
 
 //url
-const url = 'http://127.0.0.1:5000/api/v1.0/main';
+const url2 = 'http://127.0.0.1:5000/api/v1.0/main';
 
 //reformat data into seperate lists:
 function processdata(jsondata, postivedata,neutraldata, negativedata) { 
@@ -59,7 +59,7 @@ function formatForApex(jsondata){
         
 }
 
-d3.json(url).then(result => {
+d3.json(url2).then(result => {
   var formattedData = formatForApex(result);
   console.log(formattedData);
 
