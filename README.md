@@ -2,7 +2,7 @@
 
 Important Documentation:
 
-finalapp.py: Code that contains python script for API generation. Use this before loading the index file
+finalapi.py: Code that contains python script for API generation. Use this before loading the index file
 
 Index.html: Final HTML doc that runs the different javascript apps
 
