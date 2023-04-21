@@ -10,3 +10,5 @@ app.js: Folder containing the javascript apps and CSS code used for HTML
 tweets.sqllite: Dataset used for the project 
 
 Data: Folder containing geojson data for the different timezones
+
+Link to Dataset: https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment
